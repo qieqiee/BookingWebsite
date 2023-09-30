@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Student</title>
+    <style>
+        .header{
+				width:100%;
+				height:115px;
+				background-color:#ffffff;
+		}
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {background-color: rgb(50, 157, 239);}
+            
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://beranang.kpm.edu.my/kpmb/images/2021/anything/1marakpmb-merah.png" width="379">
+    </div>
+    <h1>Washing Machine Booking Data</h1>
+    <br>
+    <table>
+        <tr>
+            <td>StudentID</td>
+            <td>machineNo</td>
+            <td>laundrydate</td>
+            <td>starttime</td>
+            <td>endtime</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+        </tr>
+        {% for data in alldata %}
+        <tr>
+            <td>{{data.studentid}}</td>
+            <td>{{data.machineNo}}</td>
+            <td>{{data.laundrydate}}</td>
+            <td>{{data.starttime}}</td>
+            <td>{{data.endtime}}</td>
+            <td><a href="updatebooking/{{data.id}}">Update</a></td>
+            <td><a href="deletebooking/{{data.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <button class="button" href="index.html"><span>back </span></button>
+
+</html>

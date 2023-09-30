@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300‌​,400italic,700,700it‌​alic,800');
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.body{
+  font-family: 'Open Sans', sans-serif;
+  font-weight:500;
+}
+
+.logo{
+    vertical-align:left;
+    width: 25px;
+}
+
+.hero-page{
+  background-image:url(https://img.freepik.com/free-vector/laundry-isometric-concept_1284-18251.jpg?w=740&t=st=1676817381~exp=1676817981~hmac=d561fc5c91f88292ce2aaf1f933266f4b3339dd1a94464ed5683f9bd7f4ec9b9);
+  background-repeat:no-repeat;
+  background-position:right center;
+  background-color:#fcfdff;
+}
+.hero-container{
+  position:relative;
+  min-height:670px;
+  max-width:990px;
+  width:50%;
+  text-align:left;
+  padding-top:75px;
+  padding-bottom:75px;
+  left:10%;
+}
+
+.hero-area{
+  margin-top:15%;
+  width:450px;
+  height:100%;
+  float:left;
+}
+
+#header{
+  font-weight:lighter;
+  max-width:600px;
+  width:500px;
+  text-align:left;
+  color:#47525d;
+  font-size:50px;
+  margin-left:0;
+  margin-right:0;
+  margin:0 auto;
+  padding-bottom:20px;
+  line-height:1.3;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+               0px 8px 13px rgba(0, 0, 0, 0.1),
+               0px 16px 23px rgba(0, 0, 0, 0.1);
+}
+
+#sub-header{
+  width:500px;
+  color:#47525d;
+  margin-left:0;
+  margin-right:0;
+  margin:0 auto;
+  font-weight:100;
+  font-size:24px; /*21*/
+  padding-bottom:20px;
+  line-height:1.5;
+}
+
+.button{
+  float:left;
+  margin-top:30px;
+  text-align:center;
+  min-width:180px;
+  line-height:1.5;
+}
+
+.button>a{
+  padding: 19px 26px;
+  font-size:17px;
+  line-height:19px;
+  background:#0071e0;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #f6fafd;
+}
+
+.button a:hover{
+  opacity:0.7;
+  background-color: rgb(12, 62, 93);
+  color: rgb(233, 249, 255);
+}
+
+    </style>
+<body>
+    <section class="hero-page">
+  <div class="hero-container">
+    <div class="logo">
+        <img src="https://seeklogo.com/images/K/kolej-profesional-mara-logo-18EC62113B-seeklogo.com.png" width="130">
+      <div class="hero-area">
+        <h1 id="header">WASHING MACHINE BOOKING SYSTEM</h1>
+        <h2 id="sub-header"> The quickest way to schedule your wash </h2>
+        <div class="button">
+            <a href="{% url 'registerpage' %}">STUDENT</a>
+            <a href="{% url 'felo' %}">ADMIN</a>
+        </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

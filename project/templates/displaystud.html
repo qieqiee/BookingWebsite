@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Student</title>
+    <style>
+    .header{
+				width:100%;
+				height:115px;
+				background-color:#ffffff;
+		}
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {background-color: rgb(50, 157, 239);}
+            
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://beranang.kpm.edu.my/kpmb/images/2021/anything/1marakpmb-merah.png" width="379">
+    </div>
+    <h1>Student's Data</h1>
+    <br>
+    <table>
+        <tr>
+            <td>StudentID</td>
+            <td>StudentName</td>
+            <td>StudentPhone</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+        </tr>
+        {% for data in alldata %}
+        <tr>
+            <td>{{data.studentid}}</td>
+            <td>{{data.studentname}}</td>
+            <td>{{data.studentphone}}</td>
+            <td><a href="updatestudent/{{data.studentid}}">Update</a></td>
+            <td><a href="deletestudent/{{data.studentid}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <li><a href="{% url 'displaybooking' %}">Display Booking </a></li>
+    <li><a href="{% url 'index' %}">Index page</a></li>
+</html>

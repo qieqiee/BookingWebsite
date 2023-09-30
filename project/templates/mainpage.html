@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN PAGE</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .header{
+				width:100%;
+				height:115px;
+				background-color:#ffffff;
+			}
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: 'Montserrat', sans-serif;
+}
+
+ 
+.wrapper{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
+.registration_form{
+	background: #75afb9;
+	padding: 50px;
+	border-radius: 20px;
+	width: 400px;
+	height: 400px;
+  box-shadow: 0px 0px 50px 10px rgba(12, 12, 12, 0.498);
+}
+
+.registration_form .title{
+	text-align: center;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #034044;
+	letter-spacing: 5px;
+	font-weight: 700;
+}
+
+.form_wrap{
+	margin-top: 35px;
+	
+}
+
+.form_wrap .input_wrap{
+	margin-bottom: 15px;
+}
+
+.form_wrap .input_wrap:last-child{
+	margin-bottom: 0;
+}
+
+.form_wrap .input_wrap label{
+	display: block;
+	margin-bottom: 3px;
+	color: #eaebf3;
+
+}
+
+.form_wrap .input_grp{
+	display: flex;
+	justify-content: space-between;
+}
+
+.form_wrap .input_grp  input[type="text"]{
+	width: 165px;
+}
+
+.form_wrap  input[type="text"]{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #f8f8fc;
+	padding: 10px;
+	outline: none;
+}
+
+.form_wrap  input[type="text"]:focus{
+	border-color: #faf6f5;
+}
+
+.form_wrap ul{
+	background: #fff;
+	padding: 8px 10px;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+}
+
+
+.form_wrap .submit_btn{
+	width: 100%;
+	background: #ebd0ce;
+	padding: 10px;
+	border: 0;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	cursor: pointer;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.form_wrap .submit_btn:hover{
+	background: #ffd5d2;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #1c474f;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+    </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="https://beranang.kpm.edu.my/kpmb/images/2021/anything/1marakpmb-merah.png" width="379">
+            <img src='https://partselectcom.azureedge.net/assets/content/58702/laundry-cheat-sheet-header.png'>
+		</div>
+    <div class="wrapper">
+      <div class="registration_form">
+        <div class="title">
+          WASHING MACHINE CHECKING FORM
+        </div>
+    
+        <form action="" method="POST">
+			{% csrf_token %}
+          <div class="form_wrap">
+            <div class="input_grp">
+              <div class="input_wrap">
+                <input type="text" placeholder="StudentID" name="studentid" >
+				<select name="machineNo" >
+					<option value="">SELECT MACHINE NO</option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+				</select>
+              </div>
+              
+            </div>
+			<div>
+			<label for="fname">MACHINE LOCATION<label>
+				<select name="machineLocation" >
+					<option value="">SELECT MACHINE LOCATION</option>
+					<option value="Kamsis Khadijah">Kamsis Khadijah</option>
+					<option value="Kamsis Aisyah">Khamsis Aisyah</option>
+					<option value="Kamsis Farabi">Khamsis Farabi</option>
+				</select>
+              </div>
+              
+			  <input type="date" name="laundrydate">
+			  <select name="starttime" >
+				<option value="">SELECT MACHINE START TIME</option>
+				<option value="08:00">8 a.m</option>
+				<option value="09:00">9 a.m</option>
+				<option value="10:00">10 a.m</option>
+				<option value="11:00">11 a.m</option>
+				<option value="12:00">12 p.m</option>
+				<option value="13:00">1 p.m</option>
+				<option value="14:00">2 p.m</option>
+				<option value="15:00">3 p.m</option>
+				<option value="16:00">4 p.m</option>
+				<option value="17:00">5 p.m</option>
+			</select>
+			<select name="endtime" >
+				<option value="">SELECT MACHINE END TIME</option>
+				<option value="09:00">9 a.m</option>
+				<option value="10:00">10 a.m</option>
+				<option value="11:00">11 a.m</option>
+				<option value="12:00">12 p.m</option>
+				<option value="13:00">1 p.m</option>
+				<option value="14:00">2 p.m</option>
+				<option value="15:00">3 p.m</option>
+				<option value="16:00">4 p.m</option>
+				<option value="17:00">5 p.m</option>
+				<option value="18:00">6 p.m</option>
+			</select>
+            <div class="input_wrap">
+              <input type="submit" value="SEARCH AVAILABILITY" class="submit_btn">
+            </div>
+          </div>
+        </form>
+		{{message}}
+	{% if message == "Booked" %}
+		<br><button><a href="{% url 'success' bookdetail.id %}">View booking details</a></button></br>
+        {{id}}
+	{% else %}
+		<p>Choose date</p>
+	{% endif %}
+	
+      </div>
+	
+</body>
+</html>
